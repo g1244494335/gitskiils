@@ -1,0 +1,1 @@
+import {sty} from "style-components"
