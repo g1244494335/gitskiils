@@ -25,30 +25,28 @@ const YKRecommendRanking = memo(() => {
     )
 
     const dispatch = useDispatch()
-    // const dispatch2 = useDispatch()
-    // const dispatch3 = useDispatch()
-    // const dispatch4 = useDispatch()
+    const dispatch2 = useDispatch()
+    const dispatch3 = useDispatch()
+    const dispatch4 = useDispatch()
 
     useEffect(() => {
-        dispatch(getTopListAction())
-    }
-    , [dispatch])
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         return await getTopListAction()
-    //     }
-    //     fetchData().then((res) => {
-    //         dispatch(res)
-    //         dispatch2(getUpRankingSongsAction(toplists[0].id))
-    //         dispatch3(getNewRankingSongsAction(toplists[1].id))
-    //         dispatch4(getOriRankingSongsAction(toplists[2].id))
-    // })
-    // }, [])
+        const fetchData = async () => {
+            return await getTopListAction()
+            // console.log('ii', a);
+        }
+        fetchData().then((res) => {
+            dispatch(res)
+            // console.log(res);
+            // console.log('sucsess');
+            // dispatch2(getUpRankingSongsAction(toplists[0].id))
+            // dispatch3(getNewRankingSongsAction(toplists[1].id))
+            // dispatch4(getOriRankingSongsAction(toplists[2].id))
+    })
+    }, [])
 
     return (
         <RecommendRankingWrapper>
-            <YKThemeHeader title="榜单" />
+            <YKThemeHeader title="李笑" />
             <div className="background recommend-top-bg"></div>
         </RecommendRankingWrapper>
     )

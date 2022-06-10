@@ -53,20 +53,7 @@ export const getNewAlbumAction = () => {
     }
 }
 // 显然不是很合理
-export const  getTopListAction = (dispatch) => {
-    return (dispatch) => {
-        getTopList().then(
-            (res) => {
-                dispatch(changeTopListAction(res))
-                dispatch(getUpRankingSongsAction(res.list[0].id))
-                dispatch(getNewRankingSongsAction(res.list[1].id))
-                dispatch(getOriRankingSongsAction(res.list[2].id))
-            }
-            
-        )
-        
-    }
-}
+
 // export const  getTopListAction = async (dispatch) => {
 //     console.log(33333);
 //     let a = await getTopList()

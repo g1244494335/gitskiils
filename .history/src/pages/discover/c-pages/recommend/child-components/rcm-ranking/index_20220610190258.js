@@ -29,10 +29,7 @@ const YKRecommendRanking = memo(() => {
     // const dispatch3 = useDispatch()
     // const dispatch4 = useDispatch()
 
-    useEffect(() => {
-        dispatch(getTopListAction())
-    }
-    , [dispatch])
+    
 
     // useEffect(() => {
     //     const fetchData = async () => {
@@ -48,7 +45,7 @@ const YKRecommendRanking = memo(() => {
 
     return (
         <RecommendRankingWrapper>
-            <YKThemeHeader title="榜单" />
+            <YKThemeHeader title="李笑" />
             <div className="background recommend-top-bg"></div>
         </RecommendRankingWrapper>
     )

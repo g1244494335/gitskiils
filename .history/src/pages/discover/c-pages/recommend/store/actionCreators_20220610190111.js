@@ -53,7 +53,7 @@ export const getNewAlbumAction = () => {
     }
 }
 // 显然不是很合理
-export const  getTopListAction = (dispatch) => {
+export const  getTopListAction = async (dispatch) => {
     return (dispatch) => {
         getTopList().then(
             (res) => {

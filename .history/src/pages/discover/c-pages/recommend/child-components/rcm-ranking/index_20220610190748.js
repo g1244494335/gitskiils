@@ -48,7 +48,7 @@ const YKRecommendRanking = memo(() => {
 
     return (
         <RecommendRankingWrapper>
-            <YKThemeHeader title="榜单" />
+            <YKThemeHeader title="" />
             <div className="background recommend-top-bg"></div>
         </RecommendRankingWrapper>
     )
