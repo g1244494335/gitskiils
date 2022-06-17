@@ -36,7 +36,7 @@ const YKNewAlbum = memo(() => {
                                         {
                                             newAlbums.slice(index * 5, (index + 1) * 5).map(item => {
                                                 return (
-                                                    <YKAlbumCover item={item}/>
+                                                    <YKAlbumCover key ={item.id} item={item}/>
                                                 )
                                             })
                                         }

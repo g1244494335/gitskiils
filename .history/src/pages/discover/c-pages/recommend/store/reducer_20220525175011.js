@@ -1,6 +1,0 @@
-
-const defaultState = {
-    topBanners:[]
-}
-
-func

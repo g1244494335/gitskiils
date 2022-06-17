@@ -4,6 +4,9 @@ import YKTopBanner from './child-components/top-banner'
 import YKHotRecommend from './child-components/hot-recommend'
 import YKNewAlbum from './child-components/new-album'
 import YKRecommandRanking from './child-components/rcm-ranking'
+import YKUserLogin from './child-components/user-login'
+import YKResidentSinger from './child-components/resident-singer'
+import YKTopAnchor from './child-components/top-anchor'
 import {
   RecommendWrapper,
   Content,
@@ -23,7 +26,11 @@ const YKRecommend = (props) => {
           <YKNewAlbum />
           <YKRecommandRanking/>
         </ContentLeft>
-        <ContentRight></ContentRight>
+        <ContentRight>
+          <YKUserLogin />
+          <YKResidentSinger />
+          <YKTopAnchor/>
+        </ContentRight>
       </Content>
     </RecommendWrapper>
   )

@@ -1,4 +1,4 @@
-import React, { memo, Fragment } from 'react'
+import React, { memo} from 'react'
 import { FootWrapper, FootLeft, FootRight } from './style'
 import { footerlinks } from '../../common/local-data'
 
@@ -6,20 +6,20 @@ const YKAppFooter = memo(() => {
     const showLinks = (item, index) => {
         if (index !== 7) {
             return (
-                <Fragment>
+                <>
                     <a className="item" target="_blank" rel="noopener noreferrer" href={item.link}>
                         {item.title}
                     </a>
                     <span className="line">|</span>
-                </Fragment>
+                </>
             )
         } else {
             return (
-                <Fragment>
+                <>
                     <a className="item" target="_blank" rel="noopener noreferrer" href={item.link}>
                         {item.title}
                     </a>
-                </Fragment>
+                </>
             )
         }
     }

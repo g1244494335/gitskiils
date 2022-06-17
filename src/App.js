@@ -8,14 +8,20 @@ import store from './store'
 
 import YKAppHeader from '@/components/app-header'
 import YKAppFooter from '@/components/app-footer'
+import YKPlayerBar from './pages/player/app-player-bar'
+import ErrorBoundaries from '@/components/Error Boundaries'
 const App = memo(() => {
   return (
     <Provider store={store}>
-      <HashRouter>
+      <ErrorBoundaries>
+        <HashRouter>
           <YKAppHeader/>
           {renderRoutes(routers)}
-          <YKAppFooter/>
+          <YKAppFooter />
+          <YKPlayerBar/>
       </HashRouter>
+      </ErrorBoundaries>
+      
     </Provider>
   )
 })

@@ -53,18 +53,14 @@ export const getNewAlbumAction = () => {
     }
 }
 // 显然不是很合理
-export const  getTopListAction = (dispatch) => {
+export const getTopListAction = (dispatch) => {
     return (dispatch) => {
-        getTopList().then(
-            (res) => {
-                dispatch(changeTopListAction(res))
-                dispatch(getUpRankingSongsAction(res.list[0].id))
-                dispatch(getNewRankingSongsAction(res.list[1].id))
-                dispatch(getOriRankingSongsAction(res.list[2].id))
-            }
-            
-        )
-        
+        getTopList().then((res) => {
+            dispatch(changeTopListAction(res))
+            dispatch(getUpRankingSongsAction(res.list[0].id))
+            dispatch(getNewRankingSongsAction(res.list[1].id))
+            dispatch(getOriRankingSongsAction(res.list[2].id))
+        })
     }
 }
 // export const  getTopListAction = async (dispatch) => {
@@ -76,17 +72,13 @@ export const  getTopListAction = (dispatch) => {
 //             // dispatch(getUpRankingSongsAction(res.list[0].id))
 //             // dispatch(getNewRankingSongsAction(res.list[1].id))
 //             // dispatch(getOriRankingSongsAction(res.list[2].id))
-        
+
 //     }
 // }
 
 export const getUpRankingSongsAction = (id) => {
-    console.log(1);
     return (dispatch) => {
-        getRankingSongs(id).then((res) => {
-            console.log(123)
-            dispatch(changeUpRankingsAction(res))
-        })
+        getRankingSongs(id).then((res) => dispatch(changeUpRankingsAction(res)))
     }
 }
 

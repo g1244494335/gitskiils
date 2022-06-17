@@ -1,4 +1,0 @@
-
-const defaultState = {
-    topBan
-}

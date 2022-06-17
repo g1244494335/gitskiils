@@ -11,28 +11,29 @@ import {
 } from '../../store/actionCreators'
 
 import { RecommendRankingWrapper } from './style'
-import YKThemeHeader from '@/components/theme-header-rcm'
+import YKThemeHeader from 'components/theme-header-rcm'
+import YKRankingRCM from 'components/rangking-rcm'
+import ErrorBoundaries from 'components/Error Boundaries'
 
 const YKRecommendRanking = memo(() => {
-    const { toplists, uprankings, newrankings, orirankings } = useSelector(
-        (state) => ({
-            toplists: state.getIn(['recommend', 'topLists']),
-            // uprankings: state.getIn(['recommend', 'uprankings']),
-            // newrankings: state.getIn(['recommend', 'newrankings']),
-            // orirankings: state.getIn(['recommend', 'orirankings']),
-        }),
-        shallowEqual,
-    )
 
-    const dispatch = useDispatch()
+        const {toplists,uprankings, newrankings, orirankings } = useSelector(
+            (state) => ({
+                toplists: state.getIn(['recommend', 'topLists']),
+                uprankings: state.getIn(['recommend', 'uprankings']),
+                newrankings: state.getIn(['recommend', 'newrankings']),
+                orirankings: state.getIn(['recommend', 'orirankings']),
+            }),
+            shallowEqual,
+        )
+        const dispatch = useDispatch()
     // const dispatch2 = useDispatch()
     // const dispatch3 = useDispatch()
     // const dispatch4 = useDispatch()
 
     useEffect(() => {
         dispatch(getTopListAction())
-    }
-    , [dispatch])
+    }, [dispatch])
 
     // useEffect(() => {
     //     const fetchData = async () => {
@@ -40,24 +41,27 @@ const YKRecommendRanking = memo(() => {
     //     }
     //     fetchData().then((res) => {
     //         dispatch(res)
-    //         dispatch2(getUpRankingSongsAction(toplists[0].id))
-    //         dispatch3(getNewRankingSongsAction(toplists[1].id))
-    //         dispatch4(getOriRankingSongsAction(toplists[2].id))
+    //         console.log("t",toplists);
+    //         dispatch(getUpRankingSongsAction(toplists[0]?.id))
+    //         dispatch(getNewRankingSongsAction(toplists[1]?.id))
+    //         dispatch(getOriRankingSongsAction(toplists[2]?.id))
     // })
     // }, [])
-
+    
     return (
         <RecommendRankingWrapper>
             <YKThemeHeader title="榜单" />
-            <div className="background recommend-top-bg"></div>
+            <div className="background recommend-top-bg">
+                <div className="content">
+                    <ErrorBoundaries>
+                        <YKRankingRCM item={toplists[0]} list={uprankings} />
+                        <YKRankingRCM item={toplists[1]} list={newrankings} />
+                        <YKRankingRCM item={toplists[2]} list={orirankings} />
+                    </ErrorBoundaries>
+                </div>
+            </div>
         </RecommendRankingWrapper>
     )
 })
 
 export default YKRecommendRanking
-
-// .then(() => {
-//     dispatch(getUpRankingSongsAction(toplists[0].id))
-//     dispatch(getNewRankingSongsAction(toplists[1].id))
-//     dispatch(getOriRankingSongsAction(toplists[2].id))
-// })

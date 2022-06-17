@@ -26,7 +26,7 @@ const YKHotRecommend = memo(() => {
                 {
                     hotRecommends.map((item, index) => {
                         return (
-                            <YKSongsCover key = {item.id} item = {item}/>
+                            <YKSongsCover key={item.id} item={item} />
                         )
                     })
                 }

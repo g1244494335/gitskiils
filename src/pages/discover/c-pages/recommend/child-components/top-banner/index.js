@@ -41,7 +41,7 @@ const YKTopBanner = memo(() => {
                     <Carousel effect="fade" autoplay ref={bannerRef} beforeChange={bannerChange}>
                         {topBanners.map((item, index) => {
                             return (
-                                <a className="banner-item" href={songId(item.targetId)}>
+                                <a className="banner-item" href={songId(item.targetId)} key={item.targetId}>
                                     <img className="banner-image" src={item.imageUrl} alt={item.typeTitle} />
                                 </a>
                             )

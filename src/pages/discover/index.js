@@ -11,7 +11,7 @@ const YKDiscover = memo((props) => {
   
   const showItems = (item, index) => {
     return (
-            <NavLink className='topmenu-link' to={item.to} exact>
+            <NavLink key={index} className='topmenu-link' to={item.to} exact>
               {item.title}
             </NavLink>
           )
@@ -23,7 +23,7 @@ const YKDiscover = memo((props) => {
         <ul className='topmenulist w1100'>
           {topmenuitems.map((item, index) => {
             return (
-              <li key={index} className='topmenu-item'>
+              <li key={item.title} className='topmenu-item'>
                 {showItems(item, index)}
               </li>
             )
